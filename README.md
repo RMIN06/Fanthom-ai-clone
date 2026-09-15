@@ -1,17 +1,17 @@
 # Fathom workspace clone
 
-A polished, seeded clone of the Fathom meeting-notetaker workspace for the 8x Careers software engineering assignment.
+A polished Fathom-inspired meeting-notetaker workspace for the 8x Careers software engineering assignment.
 
 ## What is included
 
-- Populated meetings inbox with realistic seeded data
+- Personal meetings inbox backed by Supabase
 - Search across meeting titles, topics, and summaries
 - Meeting detail view with recorded-state player UI
 - AI-generated summary presentation with template affordance
 - Action items with interactive completion state
 - Transcript and highlight tabs
 - Calendar connection and automatic-capture preference state
-- Demo capture worker that produces a complete transcript → summary → action-item record
+- Browser capture session that saves the real elapsed duration for follow-up notes
 - Ask view with cross-meeting search and transcript timestamp citations
 - Meeting highlights collection and action-item workspace
 - Shareable public summary links and `.txt` meeting export
