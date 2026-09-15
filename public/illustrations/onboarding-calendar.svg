@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" fill="none" role="img" aria-labelledby="title">
+  <title>Connect calendar</title>
+  <rect x="28" y="47" width="96" height="88" rx="12" fill="#fff" stroke="#08b5df" stroke-width="3"/>
+  <path d="M28 75h96M51 36v22M101 36v22" stroke="#007fa2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 97h17M84 97h17M50 117h17M84 117h17" stroke="#d5f6ff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M139 91h37" stroke="#08b5df" stroke-width="4" stroke-linecap="round"/>
+  <path d="m165 78 14 13-14 13" stroke="#007fa2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M195 47h35v35h-35z" fill="#ecfbff" stroke="#08b5df" stroke-width="3"/>
+  <path d="m202 65 7 7 14-16" stroke="#1f9a68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

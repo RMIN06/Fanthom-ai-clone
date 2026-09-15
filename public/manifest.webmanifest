@@ -1,0 +1,12 @@
+{
+  "name": "Fathom Workspace",
+  "short_name": "Fathom",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fb",
+  "theme_color": "#08b5df",
+  "icons": [
+    { "src": "/brand/logo-icon.svg", "sizes": "64x64", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/brand/pwa-maskable.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

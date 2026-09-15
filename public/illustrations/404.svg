@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" fill="none" role="img" aria-labelledby="title">
+  <title>Page not found</title>
+  <path d="M45 89h63M152 89h63" stroke="#08b5df" stroke-width="7" stroke-linecap="round" stroke-dasharray="7 11"/>
+  <path d="M106 63h48v52h-48z" fill="#ecfbff" stroke="#007fa2" stroke-width="4"/>
+  <path d="M118 79h24M118 98h14" stroke="#08b5df" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="130" cy="35" r="12" fill="#08b5df"/><path d="M130 29v8M130 44v1" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+</svg>

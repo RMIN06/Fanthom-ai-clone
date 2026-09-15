@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-labelledby="title">
+  <title>Fathom</title>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="#08b5df"/>
+  <path d="M14 13v22M14 14h14a7 7 0 0 1 0 14H14M28 20h7" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
+  <text x="61" y="34" fill="#17232c" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="-1.5">fathom</text>
+</svg>

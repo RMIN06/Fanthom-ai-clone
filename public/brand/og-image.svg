@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#050607"/>
+  <circle cx="1010" cy="90" r="260" fill="#08b5df" opacity=".1"/>
+  <circle cx="1040" cy="110" r="170" fill="#007fa2" opacity=".12"/>
+  <g transform="translate(74 66)"><rect width="54" height="54" rx="16" fill="#08b5df"/><path d="M18 14v27M18 15h17a8 8 0 0 1 0 16H18M35 22h9" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+  <text x="144" y="108" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="-2">fathom</text>
+  <text x="74" y="290" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="600" letter-spacing="-3">Be present.</text>
+  <text x="74" y="374" fill="#6fddf5" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="600" letter-spacing="-3">Remember everything.</text>
+  <text x="78" y="430" fill="#b9c9cf" font-family="Inter, Arial, sans-serif" font-size="24">AI meeting notes, decisions, and next steps.</text>
+  <g transform="translate(660 170)"><rect width="470" height="310" rx="18" fill="#fff" stroke="#d5f6ff" stroke-width="2"/><rect width="470" height="38" rx="18" fill="#f5f8fa"/><circle cx="22" cy="19" r="5" fill="#f2a6a6"/><circle cx="40" cy="19" r="5" fill="#f3d58d"/><circle cx="58" cy="19" r="5" fill="#9ad2ae"/><rect x="22" y="68" width="106" height="214" rx="9" fill="#f8fbfc"/><rect x="151" y="70" width="274" height="16" rx="8" fill="#d5f6ff"/><rect x="151" y="103" width="185" height="10" rx="5" fill="#eaf0f2"/><rect x="151" y="143" width="274" height="75" rx="10" fill="#ecfbff" stroke="#d5f6ff"/><rect x="170" y="161" width="90" height="9" rx="4" fill="#08b5df" opacity=".45"/><rect x="170" y="181" width="214" height="8" rx="4" fill="#b8eefa"/><rect x="151" y="239" width="274" height="12" rx="6" fill="#edf2f4"/><rect x="151" y="263" width="180" height="12" rx="6" fill="#edf2f4"/></g>
+</svg>

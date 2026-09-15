@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-labelledby="title">
+  <title>Public share link</title>
+  <path d="M20 28 28 20M16 34H13a7 7 0 0 1 0-14h7M32 14h3a7 7 0 0 1 0 14h-7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="36" cy="12" r="5" fill="#08b5df" stroke="#fff" stroke-width="2"/>
+</svg>
