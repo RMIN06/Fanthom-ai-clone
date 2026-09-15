@@ -5,3 +5,5 @@ dist/
 .env.local
 .env.*.local
 Fanthom-ai-clone/
+
+.vercel
