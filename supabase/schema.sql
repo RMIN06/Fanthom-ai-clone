@@ -20,17 +20,36 @@ create table if not exists public.meetings (
   action_items jsonb not null default '[]'::jsonb,
   highlights jsonb not null default '[]'::jsonb,
   recording_url text,
+  shared boolean not null default false,
+  starred boolean not null default false,
   created_at timestamptz not null default now()
+);
+
+create table if not exists public.integration_connections (
+  id uuid primary key default uuid_generate_v4(),
+  owner_id uuid not null references auth.users(id) on delete cascade,
+  provider text not null,
+  status text not null default 'not_connected' check (status in ('connected', 'needs_reauth', 'not_eligible', 'not_connected')),
+  metadata jsonb not null default '{}'::jsonb,
+  last_synced_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique(owner_id, provider)
 );
 
 alter table public.profiles enable row level security;
 alter table public.meetings enable row level security;
+alter table public.integration_connections enable row level security;
 create policy "Users can view their profile" on public.profiles for select using (auth.uid() = id);
 create policy "Users can update their profile" on public.profiles for update using (auth.uid() = id);
 create policy "Users can view their meetings" on public.meetings for select using (auth.uid() = owner_id);
 create policy "Users can create their meetings" on public.meetings for insert with check (auth.uid() = owner_id);
 create policy "Users can update their meetings" on public.meetings for update using (auth.uid() = owner_id);
 create policy "Users can delete their meetings" on public.meetings for delete using (auth.uid() = owner_id);
+create policy "Users can view their integrations" on public.integration_connections for select using (auth.uid() = owner_id);
+create policy "Users can create their integrations" on public.integration_connections for insert with check (auth.uid() = owner_id);
+create policy "Users can update their integrations" on public.integration_connections for update using (auth.uid() = owner_id);
+create policy "Users can delete their integrations" on public.integration_connections for delete using (auth.uid() = owner_id);
 
 create or replace function public.handle_new_user()
 returns trigger language plpgsql security definer set search_path = public as $$

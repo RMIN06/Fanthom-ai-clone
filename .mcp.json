@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "google-stitch": {
+      "command": "node",
+      "args": ["scripts/stitch-mcp.mjs"],
+      "env": {
+        "STITCH_API_KEY": "${STITCH_API_KEY}",
+        "STITCH_HOST": "https://stitch.googleapis.com/mcp"
+      }
+    }
+  }
+}
