@@ -35,6 +35,11 @@
       "decision": "Use Fathom-inspired calm workspace styling with neutral surfaces, dark navy structure, and cyan as the only primary accent; avoid purple.",
       "source": "User direction",
       "date": "2026-09-15"
+    },
+    {
+      "decision": "Use a responsive, grid-free editorial landing page with a translucent glass header, starfield-only atmosphere, oversized type, cyan pill CTAs, and restrained orange/pink accents. Add tactile press feedback to all primary controls.",
+      "source": "User supplied screenshots and direction",
+      "date": "2026-09-16"
     }
   ],
   "evidence": [],
