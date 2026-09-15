@@ -30,7 +30,13 @@
     "must": [],
     "avoid": []
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "decision": "Use Fathom-inspired calm workspace styling with neutral surfaces, dark navy structure, and cyan as the only primary accent; avoid purple.",
+      "source": "User direction",
+      "date": "2026-09-15"
+    }
+  ],
   "evidence": [],
   "generatedAt": "2026-09-15T07:08:45.544Z"
 }
