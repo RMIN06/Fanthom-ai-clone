@@ -27,8 +27,17 @@
     "patterns": []
   },
   "constraints": {
-    "must": [],
-    "avoid": []
+    "must": [
+      "Use a warm-white and ink editorial palette with electric cyan as the only saturated accent.",
+      "Use Newsreader for display headings and Space Grotesk for interface text.",
+      "Keep dashboard layouts dense, asymmetric, and information-first with responsive mobile collapse."
+    ],
+    "avoid": [
+      "Purple or violet as a brand accent.",
+      "Decorative gradients, background grids, or decorative glassmorphism.",
+      "Sparkle or emoji icons as generic AI decoration.",
+      "Centered blob-hero compositions and empty marketing mockups."
+    ]
   },
   "decisions": [
     {
