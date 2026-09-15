@@ -19,7 +19,7 @@ A polished, seeded clone of the Fathom meeting-notetaker workspace for the 8x Ca
 - Responsive layout with original visual language and copy
 - Capture log directory committed at `.agent-logs/`
 
-The recording bot/capture layer is intentionally stubbed for this MVP. The product loop is fully demonstrated locally with a safe demo capture worker; the next production integration point is Recall.ai, Meeting BaaS, or browser-tab capture plus a hosted transcription provider.
+The recording bot/capture layer is intentionally stubbed: browser capture tracks a real session duration and saves a meeting record, while transcript and summary generation remain explicit integration points for a hosted capture/transcription provider.
 
 ## Run locally
 
