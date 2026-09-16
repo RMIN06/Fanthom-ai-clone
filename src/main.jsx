@@ -6,7 +6,7 @@ import {
   Sparkles, Check, Copy, Share2, Plus, Video, Tag, CheckCircle2,
   LayoutDashboard, Users, X, LogOut, MessageSquareText, Download,
   Mic2, CircleStop, ExternalLink, SlidersHorizontal, ArrowUpRight, ArrowRight,
-  FileText, Link2, ShieldCheck, Clock3, Bell
+  FileText, Link2, ShieldCheck, Clock3, Bell, Sun, Moon
 } from 'lucide-react';
 import './styles.css';
 import AuthGate from './AuthGate';
@@ -39,6 +39,7 @@ function App({ session }) {
   const [calendarEvents, setCalendarEvents] = useState([]);
   const [autoJoin, setAutoJoin] = useState(() => localStorage.getItem('fathom-auto-join') !== 'false');
   const [onboardingStep, setOnboardingStep] = useState(() => localStorage.getItem('fathom-onboarding-complete') ? 0 : 1);
+  const [theme, setTheme] = useState(() => localStorage.getItem('fathom-theme') || 'dark');
 
   const notify = (message) => { setToast(message); window.setTimeout(() => setToast(''), 2400); };
 
@@ -188,19 +189,20 @@ function App({ session }) {
     if (error) { localStorage.removeItem('fathom-calendar-pending'); notify(error.message); }
   };
   const toggleAutoJoin = () => { const next = !autoJoin; setAutoJoin(next); localStorage.setItem('fathom-auto-join', String(next)); notify(next ? 'Auto-prepare enabled' : 'Auto-prepare disabled'); };
+  const toggleTheme = () => { const next = theme === 'dark' ? 'light' : 'dark'; setTheme(next); localStorage.setItem('fathom-theme', next); notify(`${next === 'dark' ? 'Dark' : 'Light'} mode enabled`); };
   const addCaptureNote = (text) => { if (!text.trim()) return; setCapture((current) => current ? { ...current, notes: [...(current.notes || []), [formatTime(current.seconds), profile.displayName, text.trim()]] } : current); };
   const selectMeeting = (m) => { setSelected(m); setTab('Summary'); setView('Meetings'); };
   const actionCount = meetings.reduce((n, m) => n + (m.actionItems?.length || m.highlights?.length || 0), 0);
 
   if (onboardingStep) return <Onboarding step={onboardingStep} calendarConnected={calendarConnected} autoJoin={autoJoin} onConnect={connectCalendar} onSkip={() => setOnboardingStep(2)} onNext={() => setOnboardingStep(3)} onToggleAutoJoin={toggleAutoJoin} onFinish={() => { localStorage.setItem('fathom-onboarding-complete', 'true'); setOnboardingStep(0); }}/>
 
-  return <div className="app">
+  return <div className={`app theme-${theme}`}>
     <motion.aside className="sidebar" initial={{ x: -18, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: .42, ease: [.22, 1, .36, 1] }}><div className="brand"><BrandLogo/></div><motion.button className="new-btn" whileTap={{ scale: .97 }} whileHover={{ y: -2 }} onClick={() => setShowNew(true)}><Plus size={17}/> New meeting</motion.button>
       <nav><Nav icon={<LayoutDashboard/>} label="Meetings" active={view === 'Meetings'} onClick={() => setView('Meetings')}/><Nav icon={<MessageSquareText/>} label="Ask" active={view === 'Ask'} onClick={() => setView('Ask')}/><Nav icon={<Tag/>} label="Highlights" active={view === 'Highlights'} onClick={() => setView('Highlights')}/><Nav icon={<CheckCircle2/>} label="Action items" active={view === 'Action items'} onClick={() => setView('Action items')} count={actionCount}/></nav>
       <div className="nav-label">WORKSPACE</div><Nav icon={<Users/>} label="My team" onClick={() => notify('Team workspace is ready for collaboration')}/><Nav icon={<Settings/>} label="Settings" active={view === 'Settings'} onClick={() => setView('Settings')}/>
       <div className="sidebar-bottom"><button className="upgrade" onClick={() => setView('Pricing')}><Sparkles size={16}/><div><strong>Unlock more with Pro</strong><span>Unlimited recordings & AI</span></div><ChevronDown size={15}/></button><div className="user"><div className="avatar dark">{initials(profile.displayName)}</div><div><strong>{profile.displayName}</strong><span>{session ? 'Connected workspace' : 'Preview workspace'}</span></div>{session && <button className="logout-btn" onClick={() => supabase.auth.signOut()}><LogOut size={15}/></button>}</div></div>
     </motion.aside>
-    <main className="main"><header className="topbar"><div className="breadcrumbs"><span>Workspace</span><ChevronDown size={14}/><span className="muted">{view}</span></div><div className="top-actions"><button className="mobile-new-btn" aria-label="New meeting" onClick={() => setShowNew(true)}><Plus size={17}/><span>New meeting</span></button><div className="global-search"><Search size={16}/><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search meetings..." aria-label="Search meetings"/><kbd>⌘ K</kbd></div><button className="mobile-search-trigger" aria-label="Search meetings" onClick={() => setCommandOpen(true)}><Search size={17}/></button><button className="icon-btn" title="Calendar" aria-label="Open calendar" onClick={() => setShowCalendar(true)}><CalendarDays size={18}/></button><button className="icon-btn notification-button" title="Notifications" aria-label="Open notifications" onClick={() => notify('You are all caught up')}><Bell size={17}/><span/></button><div className="avatar">{initials(profile.displayName)}</div></div></header>
+    <main className="main"><header className="topbar"><div className="breadcrumbs"><span>Workspace</span><ChevronDown size={14}/><span className="muted">{view}</span></div><div className="top-actions"><button className="mobile-new-btn" aria-label="New meeting" onClick={() => setShowNew(true)}><Plus size={17}/><span>New meeting</span></button><div className="global-search"><Search size={16}/><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search meetings..." aria-label="Search meetings"/><kbd>⌘ K</kbd></div><button className="mobile-search-trigger" aria-label="Search meetings" onClick={() => setCommandOpen(true)}><Search size={17}/></button><button className="icon-btn" title="Calendar" aria-label="Open calendar" onClick={() => setShowCalendar(true)}><CalendarDays size={18}/></button><button className="icon-btn notification-button" title="Notifications" aria-label="Notifications" onClick={() => notify('You are all caught up')}><Bell size={17}/><span/></button><button className="theme-toggle" title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} onClick={toggleTheme}>{theme === 'dark' ? <Sun size={16}/> : <Moon size={16}/>}<span>{theme === 'dark' ? 'Light' : 'Dark'}</span></button><div className="avatar">{initials(profile.displayName)}</div></div></header>
       <AnimatePresence mode="wait">{view === 'Meetings' && <motion.div key="meetings" className="view-transition" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: .26, ease: [.22, 1, .36, 1] }}><MeetingsView meetings={filtered} selected={selected} loading={loading} query={query} userName={profile.firstName} calendarConnected={calendarConnected} calendarStatus={calendarStatus} upcomingEvents={calendarEvents} onCalendar={() => setShowCalendar(true)} onSelect={selectMeeting} tab={tab} setTab={setTab} playing={playing} setPlaying={setPlaying} notify={notify} toggleAction={toggleAction} addAction={addAction} addHighlight={addHighlight} onShare={createShare} onExport={exportMeeting} onDelete={deleteMeeting} onClearSearch={() => setQuery('')}/></motion.div>}
       {view === 'Ask' && <motion.div key="ask" className="view-transition" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: .26 }}><AskView meetings={meetings} onSelect={selectMeeting}/></motion.div>}
       {view === 'Highlights' && <motion.div key="highlights" className="view-transition" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: .26 }}><HighlightsView meetings={meetings} onSelect={selectMeeting}/></motion.div>}
