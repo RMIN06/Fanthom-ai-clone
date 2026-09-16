@@ -49,6 +49,11 @@
       "decision": "Use a responsive, grid-free editorial landing page with a translucent glass header, starfield-only atmosphere, oversized type, cyan pill CTAs, and restrained orange/pink accents. Add tactile press feedback to all primary controls.",
       "source": "User supplied screenshots and direction",
       "date": "2026-09-16"
+    },
+    {
+      "decision": "Use a dark workspace redesign with bold Space Grotesk headings, near-black surfaces, cyan action color, fluid minmax dashboard columns, and motion for view, card, and control state changes.",
+      "source": "User direction",
+      "date": "2026-09-16"
     }
   ],
   "evidence": [],
