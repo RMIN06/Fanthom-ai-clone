@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, CalendarDays, Check, ChevronDown, Globe2, LockKeyhole, Search, Video, Share2, Clock3, Mic2, FileText, ListChecks } from 'lucide-react';
+import { ArrowRight, CalendarDays, Check, ChevronDown, Globe2, LockKeyhole, Search, Video, Share2, Clock3, Mic2, FileText, ListChecks, Sparkles } from 'lucide-react';
 import { supabase, supabaseConfigured } from './lib/supabase';
 import BrandLogo from './BrandLogo';
 
